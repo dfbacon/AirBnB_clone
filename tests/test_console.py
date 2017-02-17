@@ -104,6 +104,13 @@ class TestConsole(unittest.TestCase):
             self.assertFalse(cli.onecmd("update News"))
             self.assertEqual(TestConsole.no_class, stdout.getvalue())
 
+    def test_empty(self):
+        """test method for empty line"""
+        cli = self.create()
+        with captured_stdout() as stdout, captured_stderr() as stderr:
+            self.assertFalse(cli.onecmd(""))
+            self.assertEqual("", stdout.getvalue())
+
     def test_help(self):
         """test method for help output"""
         cli = self.create()
