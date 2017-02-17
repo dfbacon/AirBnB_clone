@@ -33,15 +33,23 @@ Usage
 To run, execute the console.py script; will launch with the prompt, (hbnb) .
 
 Classes:
+
 	* Amenity
+
 	* BaseModel
+
 	* City
+
 	* Place
+
 	* Review
+
 	* State
+
 	* User
 
 Commands:
+
 	* create: Create an instance.
 	    ->(hbnb) create User
 
