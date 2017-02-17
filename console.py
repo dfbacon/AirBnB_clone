@@ -19,7 +19,14 @@ class hbnb(cmd.Cmd):
     """
     prompt = '(hbnb) '
     obj = models.storage.all()
-    file = None
+    errors = {
+        "badid": "** no instance found **",
+        "noid": "** instance id missing **",
+        "badclass": "** class doesn't exist **",
+        "noclass": "** class name missing **",
+        "novalue": "** value missing **",
+        "noattr": "** attribute name missing **"
+    }
 
     def do_quit(self, arg):
         '''Quit command to exit the program.'''
@@ -39,25 +46,26 @@ class hbnb(cmd.Cmd):
         new_class = ['BaseModel', 'Amenity', 'City', 'Place', 'Review',
                      'State', 'User']
         if len(args) < 1:
-            print('** class name missing **')
+            print(self.errors['noclass'])
+        elif args[0] in new_class:
+            if args[0] == 'BaseModel':
+                new = models.BaseModel()
+            if args[0] == 'Amenity':
+                new = models.Amenity()
+            if args[0] == 'City':
+                new = models.City()
+            if args[0] == 'Place':
+                new = models.Place()
+            if args[0] == 'Review':
+                new = models.Review()
+            if args[0] == 'State':
+                new = models.State()
+            if args[0] == 'User':
+                new = models.User()
+            new.save()
+            print('{}'.format(new.id))
         else:
-            if args[0] in new_class:
-                if args[0] == 'BaseModel':
-                    new = models.BaseModel()
-                if args[0] == 'Amenity':
-                    new = models.Amenity()
-                if args[0] == 'City':
-                    new = models.City()
-                if args[0] == 'Place':
-                    new = models.Place()
-                if args[0] == 'Review':
-                    new = models.Review()
-                if args[0] == 'State':
-                    new = models.State()
-                if args[0] == 'User':
-                    new = models.User()
-                new.save()
-                print('{}'.format(new.id))
+            print(self.errors['badclass'])
 
     def do_show(self, arg):
         '''Prints the string representation of an instance'''
@@ -66,17 +74,17 @@ class hbnb(cmd.Cmd):
         args = arg.split()
 
         if (len(args) == 0):
-            print('** class name is missing **')
+            print(self.errors['noclass'])
         elif args[0] not in new_class:
-            print('** class doesn''t exist **')
+            print(self.errors['badclass'])
         elif (len(args) < 2):
-            print('** instance id missing **')
+            print(self.errors['noid'])
         else:
             if args[0] in new_class:
                 models.storage.reload()
                 new_dict = models.storage.all()
                 if args[1] not in new_dict:
-                    print('** no instance found **')
+                    print(self.errors['badid'])
                 for key in new_dict:
                     if args[0] in str(new_dict[key]):
                         if args[1] in new_dict.keys():
@@ -90,17 +98,17 @@ class hbnb(cmd.Cmd):
         args = arg.split()
 
         if (len(args) == 0):
-            print('** class name is missing **')
+            print(self.errors['noclass'])
         elif args[0] not in new_class:
-            print('** class doesn''t exist **')
+            print(self.errors['badclass'])
         elif (len(args) < 2):
-            print('** instance id missing **')
+            print(self.errors['noid'])
         else:
             if args[0] in new_class:
                 models.storage.reload()
                 new_dict = models.storage.all()
                 if args[1] not in new_dict:
-                    print('** not instance found **')
+                    print(self.errors['badid'])
                 else:
                     if args[1] in new_dict.keys():
                         if args[0] in str(new_dict[args[1]]):
@@ -121,8 +129,7 @@ class hbnb(cmd.Cmd):
                         our_list.append(str(self.obj[i]))
                 print(our_list)
             else:
-                print("** class doesn't exist **")
-
+                print(self.errors['badclass'])
     def do_update(self, arg):
         '''Updates an instance by adding or updating attribute'''
         new_class = ['BaseModel', 'Amenity', 'City', 'Place', 'Review',
@@ -131,15 +138,15 @@ class hbnb(cmd.Cmd):
         new_dict = models.storage.all()
 
         if len(args) == 0:
-            print('** class name is missing **')
+            print(self.errors['noclass'])
         elif args[0] not in new_class:
-            print('** class doesn''t exist **')
+            print(self.errors['badclass'])
         elif len(args) < 2:
-            print('** instance id missing **')
+            print(self.errors['noid'])
         elif args[1] not in new_dict:
-            print('** no instance found **')
+            print(self.errors['badid'])
         elif len(args) < 4 not in self.obj:
-            print('** value missing **')
+            print(self.errors['novalue'])
         else:
             class_name = args[0]
             user_id = args[1]
