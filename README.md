@@ -83,7 +83,3 @@ Daniel Bacon: https://github.com/dfbacon
 Ntuji Vang: https://github.com/ntujvang
 
 Holberton School: https://www.holbertonschool.com/
-* 0-setup_web_static.sh
-* 1-pack_web_static.py
-* 2-do_deploy_web_static.py
-* 3-deploy_web_static.py
