@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # set up web server for deployment
 
+sudo apt-get update
 sudo apt-get install -y nginx
 
 # check and create /data directory
@@ -30,7 +31,7 @@ fi
 
 # check and create index.html file
 if [ ! -f /data/web_static/releases/test/index.html ]; then
-    echo "<html><head></head><body>Holberton School</body></html>" | sudo tee /data/web_static/releases/test/index.html
+    echo -e '<html><head></head><body>Holberton School</body></html>' | sudo tee /data/web_static/releases/test/index.html
 fi
 
 sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
