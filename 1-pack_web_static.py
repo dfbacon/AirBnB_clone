@@ -14,6 +14,9 @@ def do_pack():
     '''This is the 'do_pack' function.
     do_pack generates a .tgz file and returns the archive path, or None.
     '''
-    local("sudo mkdir -p versions/")
-    local("sudo tar -zcvf \"./versions/web_static_`date +%Y%m%d%H%M%S`.tgz\"\
-    web_static")
+    try:
+        local("sudo mkdir -p versions/")
+        local("sudo tar -zcvf \"./versions/web_static_`date +%Y%m%d%H%M%S`.tgz\"
+        web_static")
+    except:
+        return None
