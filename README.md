@@ -1,4 +1,5 @@
 ![alt tag](https://github.com/dfbacon/AirBnB_clone/blob/master/web_static/images/logo.png)
+
 Holberton School AirBnB Clone Project
 =====================================
 
