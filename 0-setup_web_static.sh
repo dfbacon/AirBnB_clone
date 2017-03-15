@@ -37,6 +37,8 @@ sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 
 sudo chown -R ubuntu:ubuntu /data
 
-sudo sed - i '39 i\tlocation /hbnb_static {\n\t\talias  /data/web_static/curren;\n\t}\n' /etc/nginx/sites-enabled/default
+prev='location \/ {'
+new='location \/hbnb_static\/ {\n\talias \/data\/web_static\/current\n';
+sudo sed -i 's/$prev/$new/' /etc/nginx/sites-enabled/default
 
 sudo service nginx restart
