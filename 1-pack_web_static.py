@@ -7,6 +7,7 @@ location.
 
 This module contains 1 function: do_pack().
 '''
+from fabric.api import *
 
 
 def do_pack():
