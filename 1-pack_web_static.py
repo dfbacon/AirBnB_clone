@@ -11,7 +11,7 @@ This module contains 1 function: do_pack().
 
 def do_pack():
     '''This is the 'do_pack' function.
-    do_pack generates a .tgz file and returns the archive path, or None if fail.
+    do_pack generates a .tgz file and returns the archive path, or None.
     '''
     local("sudo mkdir -p versions/")
     local("sudo tar -zcvf \"./versions/web_static_`date +%Y%m%d%H%M%S`.tgz\"\
