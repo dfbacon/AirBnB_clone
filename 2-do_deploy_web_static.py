@@ -12,17 +12,6 @@ from fabric.api import *
 env.hosts = ['34.207.77.115', '54.208.161.26']
 
 
-def do_pack():
-    '''This is the 'do_pack' function.
-    do_pack generates a .tgz file and returns the archive path, or None.
-    '''
-    try:
-        local("sudo mkdir -p versions/")
-        local("sudo tar -zcvf\"./versions/web_static_`date +%Y%m%d%H%M%S`.tgz\"\
-        web_static")
-    except:
-        return None
-
 def do_deploy(archive_path):
     '''This is the do_deploy function.
     do_deploy has 1 parameter: the path to a given archive.
