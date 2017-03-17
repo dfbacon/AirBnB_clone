@@ -3,20 +3,16 @@
     flex-wrap: wrap;
     justify-content:center;
 }
-
 section.places h1{
     font-size:30px;
     padding-left:20px;
 }
-
 section.places div.places_title{
     width: 100%;
 }
-
 section.places article h2{
     font-size:30px;
 }
-
 section.places article{
     flex-grow: 1;
     padding: 20px;
@@ -26,7 +22,6 @@ section.places article{
     border-radius: 4px;
     text-align: center;
 }
-
 div.price_by_night{
     color:#FF5A5F;
     border: 4px solid #FF5A5F;
@@ -40,7 +35,6 @@ div.price_by_night{
     float: right;
     line-height: 60px;
 }
-
 div.information{
     height:80px;
     border-top:1px solid #DDDDDD;
@@ -48,7 +42,6 @@ div.information{
     display:flex;
     justify-content:center;
 }
-
 div.max_guest{
     width: 100px;
     background: url(../images/icon_group.png);
@@ -56,7 +49,6 @@ div.max_guest{
     background-position:center;
     flex-grow: 1;
 }
-
 div.number_rooms{
     width: 100px;
     background: url(../images/icon_bed.png);
@@ -64,7 +56,6 @@ div.number_rooms{
     flex-grow: 1;
     background-position:center;
 }
-
 div.number_bathrooms{
     width: 100px;
     background: url(../images/icon_bath.png);
@@ -72,7 +63,6 @@ div.number_bathrooms{
     flex-grow: 1;
     background-position:center;
 }
-
 div.place_details{
     margin-top: 60px;
     margin-left:14px;
@@ -80,16 +70,13 @@ div.place_details{
     width: 100px;
     align-self: flex-end;
 }
-
 span.owner{
     font-weight:700;
 }
-
 div.user, div.description{
     text-align:left;
     justify-content: flex-start;
 }
-
 div.user{
     margin-top: 10px;
     line-height: 2em;
