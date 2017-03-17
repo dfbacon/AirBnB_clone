@@ -1,19 +1,23 @@
-.places {
+.places{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:center;
 }
 
-.places h1 {
-    font-size: 30px;
-    padding-left: 20px;
+section.places h1{
+    font-size:30px;
+    padding-left:20px;
 }
 
-.places_title {
+section.places div.places_title{
     width: 100%;
 }
 
-article {
+section.places article h2{
+    font-size:30px;
+}
+
+section.places article{
     flex-grow: 1;
     padding: 20px;
     margin: 20px;
@@ -23,11 +27,7 @@ article {
     text-align: center;
 }
 
-article h2 {
-    font-size: 30px;
-}
-
-.price_by_night {
+div.price_by_night{
     color:#FF5A5F;
     border: 4px solid #FF5A5F;
     border-radius: 50%;
@@ -41,39 +41,39 @@ article h2 {
     line-height: 60px;
 }
 
-.information {
-    height: 80px;
-    border-top: 1px solid #DDDDDD;
-    border-bottom: 1px solid #DDDDDD;
-    display: flex;
-    justify-content: center;
+div.information{
+    height:80px;
+    border-top:1px solid #DDDDDD;
+    border-bottom:1px solid #DDDDDD;
+    display:flex;
+    justify-content:center;
 }
 
-.max_guest {
+div.max_guest{
     width: 100px;
     background: url(../images/icon_group.png);
-    background-repeat: no-repeat;
-    background-position: center;
+    background-repeat:no-repeat;
+    background-position:center;
     flex-grow: 1;
 }
 
-.number_rooms {
+div.number_rooms{
     width: 100px;
     background: url(../images/icon_bed.png);
-    background-repeat: no-repeat;
-    background-poition: center;
+    background-repeat:no-repeat;
     flex-grow: 1;
+    background-position:center;
 }
 
-.number_bathrooms {
+div.number_bathrooms{
     width: 100px;
     background: url(../images/icon_bath.png);
-    background-repeat: no-repeat;
-    background-position: center;
+    background-repeat:no-repeat;
     flex-grow: 1;
+    background-position:center;
 }
 
-.place_details {
+div.place_details{
     margin-top: 60px;
     margin-left:14px;
     flex-grow: 1;
@@ -81,16 +81,16 @@ article h2 {
     align-self: flex-end;
 }
 
-span.owner {
-    font-weight: 700;
+span.owner{
+    font-weight:700;
 }
 
-.user {
+div.user, div.description{
+    text-align:left;
+    justify-content: flex-start;
+}
+
+div.user{
     margin-top: 10px;
     line-height: 2em;
-}
-
-.description {
-    text-align: left;
-    justify-content: flex-start;
 }

@@ -1,24 +1,23 @@
-.filters {
-    color: white;
-    height: 70px;
+section.filters{
+    height:70px;
     width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
 }
 
-.filters div {
+section.filters div{
     display: inline-block;
     width: 25%;
     text-align: left;
     padding-left: 30px;
-    position: relative;
+    position:relative;
 }
 
-.locations {
-    border-right: 1px solid #DDDDDD;
+section.filters div.locations{
+    border-right:1px solid #DDDDDD;
 }
 
-.buttoncell {
+section.filters div.buttoncell {
     position:relative;
     left: 50px;
     bottom: 11px;
@@ -27,63 +26,63 @@
     padding-right: 30px;
     text-align: right;
     padding-bottom: 11px;
+
 }
 
-.amenities ul.popover{
+ul.popover{
+    display:none;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    position:absolute;
+    left: 0;
+    top: 100%;
+    margin: 0;
+    padding-left: 30px;
+    padding-bottom: 25px;
+    background-color:#FAFAFA;
+    width:89%;
+}
+
+div.amenities ul.popover{
     left: -5px;
-    padding-top: 20px;
+    padding-top:20px;
 }
 
-h3 {
+li{
+    list-style:none;
+}
+
+section.filters div.locations:hover ul.popover{
+    display:block;
+}
+
+section.filters div.amenities:hover ul.popover{
+    display:block;
+    position: absolute;
+}
+
+section.filters div h3{
     font-weight: 600;
-    line-height: .6;
+    line-height: .6
 }
 
-h4 {
+section.filters div h4{
     font-weight: 400;
     font-size: 14px;
     line-height: .6;
 }
 
-button {
+section.filters button{
     font-size: 18px;
-    background-color: #FF5A5F;
-    border-style: none;
     color: white;
+    background-color: #FF5A5F;
     min-height: 48px;
     width: 200px;
-    border-radius: 4px;
     border-width: 0px;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-li {
-    list-style: none;
-}
-
-.locations:hover .popover {
-    display: block;
-}
-
-.amenities:hover .popover {
-    display: block;
-    position: absolute;
-}
-
-.popover {
-    margin: 0;
-    display: none;
-    position: absolute;
-    background: #FAFAFA;
-    width: 89%;
-    left: 0;
-    top: 100%;
-    color: black;
-    border: 1px solid #DDDDDD;
+    border-style: none;
     border-radius: 4px;
-    padding-left: 30px;
-    padding-bottom: 25px;
+}
+
+section.filters button:hover{
+    opacity: 0.9;
 }
