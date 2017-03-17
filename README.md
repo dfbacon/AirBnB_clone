@@ -77,6 +77,10 @@ Documentation for specific functions, method, and Classes are annotated just
 prior to their definition. All code is written in Python3, and complies to
 PEP8 style documentation.
 
+To Visit
+--------
+https://www.dfbacon.site/hbnb_static/8-index.html
+
 Contacts
 --------
 
