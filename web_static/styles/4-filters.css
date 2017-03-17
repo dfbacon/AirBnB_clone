@@ -1,11 +1,14 @@
-.filters {
-    color: white;
-    height: 70px;
-    width: 100%;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px;
-    padding: 10px;
-    position: relative;
+section.filters {
+    color:white;
+    height:70px;
+    width:100%;
+    border:1px solid #DDDDDD;
+    border-radius:4px;
+    padding:10px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding-right:30px;
 }
 
 button {
